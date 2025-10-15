@@ -1,0 +1,29 @@
+name: Run Databricks Notebook
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-notebook:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v3
+
+    - name: Trigger Databricks Job
+      run: |
+        curl -X POST https://${{ secrets.DATABRICKS_HOST }}/api/2.1/jobs/runs/submit \
+        -H "Authorization: Bearer ${{ secrets.DATABRICKS_TOKEN }}" \
+        -H "Content-Type: application/json" \
+        -d '{
+              "run_name": "GitHub Action Run",
+              "new_cluster": {
+                "spark_version": "13.3.x-scala2.12",
+                "node_type_id": "Standard_DS3_v2",
+                "num_workers": 2
+              },
+              "notebook_task": {
+                "notebook_path": "/Workspace/Path/To/YourNotebook"
+              }
+            }'
