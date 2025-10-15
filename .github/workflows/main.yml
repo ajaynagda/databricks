@@ -21,20 +21,5 @@ jobs:
         -H "Authorization: Bearer dapi852b1f295a0dc2e389f8377448a829e7" \
         -H "Content-Type: application/json" \
         -d '{
-              "run_name": "GitHub Action Run",
-              "new_cluster": {
-                "spark_version": "13.3.x-scala2.12",  
-                "data_security_mode": "SINGLE_USER",
-                "runtime_engine": "PHOTON",
-                "num_workers": 1,
-                "instance_pool_id": null,
-                "enable_elastic_disk": true,
-                "custom_tags": {
-                  "ResourceClass": "Serverless"
-                }
-              }
-              ,
-              "notebook_task": {
-                "notebook_path": "/Workspace/Test"
-              }
+              "job_id": 255293602963038
             }'
