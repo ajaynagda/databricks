@@ -17,7 +17,7 @@ jobs:
 
     - name: Trigger Databricks Job
       run: |
-        curl -X POST https://dbc-9f11103b-bf2c.cloud.databricks.com/api/2.1/jobs/runs/submit \
+        curl -X POST https://dbc-9f11103b-bf2c.cloud.databricks.com/api/2.1/jobs/run-now \
         -H "Authorization: Bearer dapi852b1f295a0dc2e389f8377448a829e7" \
         -H "Content-Type: application/json" \
         -d '{
