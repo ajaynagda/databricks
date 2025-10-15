@@ -1,4 +1,4 @@
-name: Run Databricks Notebook
+name: Run Databricks Notebook1
 
 on:
   push:
