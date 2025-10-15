@@ -17,8 +17,8 @@ jobs:
 
     - name: Trigger Databricks Job
       run: |
-        curl -X POST https://${{ secrets.DATABRICKS_HOST }}/api/2.1/jobs/runs/submit \
-        -H "Authorization: Bearer ${{ secrets.DATABRICKS_TOKEN }}" \
+        curl -X POST https://dbc-9f11103b-bf2c.cloud.databricks.com/api/2.1/jobs/runs/submit \
+        -H "Authorization: Bearer dapi852b1f295a0dc2e389f8377448a829e7" \
         -H "Content-Type: application/json" \
         -d '{
               "run_name": "GitHub Action Run",
@@ -28,6 +28,6 @@ jobs:
                 "num_workers": 2
               },
               "notebook_task": {
-                "notebook_path": "/Workspace/Path/To/YourNotebook"
+                "notebook_path": "/Workspace/Test"
               }
             }'
