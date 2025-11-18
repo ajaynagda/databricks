@@ -1,3 +1,3 @@
 # Databricks notebook source
 first
-TOKEN="1234567890"
+mysql_connection_string="1234567890"
